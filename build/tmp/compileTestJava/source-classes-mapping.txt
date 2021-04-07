@@ -1,0 +1,2 @@
+com/bridgelabz/userregistration/UserRegistrationTest.java
+ com.bridgelabz.userregistration.UserRegistrationTest
