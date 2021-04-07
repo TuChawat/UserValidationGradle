@@ -36,7 +36,7 @@ public class UserValidationProcess {
     }
 
     public boolean validPassword(String Password) {
-        String pattern = "^([a-zA-Z0-9]{8,})$";
+        String pattern = "^([a-z]{8})$";
         if (Password.matches(pattern))
             return true;
 
@@ -45,7 +45,7 @@ public class UserValidationProcess {
     }
 
     public boolean validPasswordAtleastOneUpperCase(String Password) {
-        String pattern = "^(.*[A-Z]{1}[A-Za-z0-9]{7,})$";
+        String pattern = "^([a-z A-Z]{8})$";
         if (Password.matches(pattern))
             return true;
 
@@ -54,7 +54,7 @@ public class UserValidationProcess {
     }
 
     public boolean validateAlteastOneNumber(String password) {
-        String pattern = "^(.*[A-Z]{1,}[0-9]{1,}[A-Za-z0-9]{6,})$";
+        String pattern = "^([0-9 a-z A-Z]{8})$";
         if (password.matches(pattern))
             return true;
 
@@ -63,19 +63,12 @@ public class UserValidationProcess {
     }
 
     public boolean validSpecialChar(String password) {
-        String pattern =  "^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$";
+        String pattern =  "^(?=.?[A-Z])(?=(.[a-z]){1,})(?=[.]{1,})(?=1,})(?!.*\\\\s).{8,}$";
         if (password.matches(pattern))
             return true;
 
         else
             return false;
-    }
-
-    public String analyseMode(String message) {
-        if (message.contains("SAD"))
-            return "SAD";
-        else
-            return "HAPPY";
     }
 
 }
